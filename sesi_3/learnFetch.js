@@ -18,9 +18,6 @@ const fetchData = async () => {
     } catch(err) {
         throw err
     }
-    
-    
-    
 }
 
 const showData = async () => {
