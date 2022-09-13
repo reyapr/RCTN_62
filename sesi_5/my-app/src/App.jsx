@@ -15,6 +15,7 @@ function App() {
       <Hero/>
       <hr />
       <HeroName title={'test-123'}/>
+      <HeroName description="Blalalalalal" />
     </div>
   );
 }

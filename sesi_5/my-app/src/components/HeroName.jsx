@@ -1,6 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class HeroName extends React.Component {
+    
+    static defaultProps = {
+        description: 'lorem'
+    }
+    
+    static propTypes = {
+        title: PropTypes.string.isRequired,
+        setTitle: PropTypes.func
+    }
+    
     render() {
         console.log(this.props, 'props')
         return (
@@ -13,9 +24,12 @@ class HeroName extends React.Component {
                         </button>
                 }
                 
+                <span>{this.props.description}</span>
+                
             </div>
         )
     }
 }
+
 
 export default HeroName
