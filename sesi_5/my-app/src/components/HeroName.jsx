@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import MyButton from './atoms/MyButton'
 
 class HeroName extends React.Component {
     
@@ -19,9 +20,11 @@ class HeroName extends React.Component {
                 <h1>{this.props.title}</h1>
                 {
                     this.props.setTitle && 
-                        <button onClick={() => this.props.setTitle('Sedunia')}>
+                        <MyButton
+                            onClick={() => this.props.setTitle('Sedunia')}
+                        >
                             Change Title
-                        </button>
+                        </MyButton>
                 }
                 
                 <span>{this.props.description}</span>

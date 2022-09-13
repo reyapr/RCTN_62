@@ -1,4 +1,5 @@
 import React from 'react'
+import CounterButton from '../molecules/CounterButton'
 
 export default class Counter extends React.Component {
     constructor() {
@@ -26,13 +27,15 @@ export default class Counter extends React.Component {
     
     render() {
         return (
-            <>
-                <h1>{this.state.title}</h1>
-                <br />
+            <> 
                 <h3>{this.state.num}</h3>
-                <button onClick={this.increment(2)}>+</button>
-                {' '}
-                <button onClick={this.decrement}>-</button>
+                <div>
+                    <CounterButton 
+                        increment={this.increment(1)}
+                        decrement={this.decrement}
+                    />
+                </div>
+               
             </>
         )
     }

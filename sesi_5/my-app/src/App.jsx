@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './components/User';
-import Counter from './components/Counter'
 import Hero from './components/Hero';
 import HeroName from './components/HeroName';
+import CounterPage from './components/pages/CounterPage';
 
 function App() {
   return (
     <div className="App">
       <User/>
       <hr />
-      <Counter/>
+      <CounterPage/>
       <hr />
       <Hero/>
       <hr />
