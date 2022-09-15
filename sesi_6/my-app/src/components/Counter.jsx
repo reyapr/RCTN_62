@@ -1,19 +1,36 @@
 import { useState } from "react"
 
 const Counter = ({ initNum }) => {    
-    const [num, setNum] = useState(initNum)
+    const [state, setState] = useState({
+        num: initNum,
+        title: 'Functional Component',
+        records: {initNum}
+    }) 
     
     const increment = () => {
-        setNum((prev) => prev + 1)
+        setState((prev) => ({
+            ...state,
+            num: prev.num + 1,
+            records: {
+                ...state.records,
+                prevNum: prev.num
+            }
+        }))
     }
     
     const decrement = () => {
-        setNum(num - 1)
+        setState({
+            ...state,
+            num: state.num - 1
+        })
     } 
+    
+    console.log(state)
     
     return (
         <div>
-            <h2>{num}</h2>
+            <h1>{state.title}</h1>
+            <h2>{state.num}</h2>
             <button onClick={increment}>+</button>
             {'  '}
             <button onClick={decrement}>-</button>

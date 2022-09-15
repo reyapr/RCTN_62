@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './components/Movie'
 import Counter from './components/Counter';
+import CounterClass from './components/CounterClass';
 
 function Header() {
   return (
@@ -31,13 +32,9 @@ const Footer = () => {
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <hr />
-      <Content/>
-      <hr />
-      <Footer/>
-      <hr />
       <Counter initNum={10}/>
+      <hr />
+      <CounterClass initNum={5}/>
     </div>
   );
 }
