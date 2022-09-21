@@ -7,6 +7,7 @@ import Counter2 from './components/Counter2';
 import ErrorBoundary from './components/ErrorBoundary';
 import LearnMounting from './components/LearnMounting';
 import User from './components/User';
+import UserFn from './components/UserFn.jsx';
 
 
 class App extends React.Component {
@@ -14,7 +15,8 @@ class App extends React.Component {
     super()
     this.state = {
       num1: 0,
-      num2: 0
+      num2: 0,
+      showUserFn: true
     }
   }
   
@@ -24,7 +26,14 @@ class App extends React.Component {
   
   increment2 = () => {
     this.setState({ num2: this.state.num2 + 1 })
-}
+  }
+  
+  unshowUserFn = () => {
+    
+    this.setState({
+      showUserFn: false
+    })
+  }
   
   render() {
     return (
@@ -32,6 +41,9 @@ class App extends React.Component {
         <div className="App">
           <LearnMounting/>
           <User/>
+          <hr />
+          <button onClick={this.unshowUserFn}>unshow user fn</button>
+          {this.state.showUserFn && <UserFn/>}
           <hr />
           <h1>Learn Updating React</h1>
           <Counter/>
