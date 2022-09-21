@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 
 class User extends React.Component {
@@ -8,14 +9,11 @@ class User extends React.Component {
         }
     }
     
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    users: res
-                })
-            })
+    async componentDidMount() {
+        let res = await axios.get('https://jsonplaceholder.typicode.com/users')
+        this.setState({
+            users: res.data
+        })
     }
     
     render() {
@@ -25,7 +23,7 @@ class User extends React.Component {
                     {
                         this.state.users.map(user => {
                             return (
-                                <li>
+                                <li key={user.id} style={{marginBottom: '10px'}}>
                                     <div>Name: {user.name}</div> 
                                     <div>Email: {user.email}</div>
                                 </li>
