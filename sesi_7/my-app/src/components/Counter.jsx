@@ -1,5 +1,4 @@
 import React from 'react';
-import MyButton from './MyButton';
 
 class Counter extends React.Component {
     constructor() {
