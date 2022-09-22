@@ -15,13 +15,13 @@ const Movie = () => {
     
     return (
         <div>
-            <ul>
+            <ul className="list-group">
                 {
                     pokemons.map(pokemon => {
                         return (
                             <li 
                                 key={pokemon.url}
-                                className={styles.list}
+                                className="list-group-item"
                                 style={listColorText}
                             >
                                 {pokemon.name}
