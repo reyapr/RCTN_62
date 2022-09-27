@@ -11,6 +11,8 @@ import Member from './pages/Member';
 import MemberDetails from './pages/Member/MemberDetails';
 import Item from './pages/Item';
 import ItemDetails from './pages/Item/ItemDetails';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -25,9 +27,17 @@ function App() {
         <Route path='/about/anything' element={<AboutAnything/>}/>
         <Route path='/member' element={<Member/>}/>
         <Route path='/member/:name' element={<MemberDetails/>}/>
-        <Route path='/item' element={<Item/>}>
-          <Route path=':id' element={<ItemDetails/>}/>
-        </Route>
+          <Route 
+            path='/item' 
+            element={
+              <ProtectedRoute>
+                <Item/>
+              </ProtectedRoute>
+            }
+          >
+            <Route path=':id' element={<ItemDetails/>}/>
+          </Route>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </div>
   );
