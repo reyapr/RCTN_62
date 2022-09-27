@@ -1,0 +1,13 @@
+const AboutCompany = () => {
+    return (
+        <div>
+            <h2>About Company</h2>
+            <p>
+                This is an About Company page, 
+                which is a sub page of About Us Page
+            </p>
+        </div>
+    )
+}
+
+export default AboutCompany
