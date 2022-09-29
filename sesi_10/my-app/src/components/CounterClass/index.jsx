@@ -10,7 +10,6 @@ class CounterClass extends React.Component {
         }
     }
     
-    
     handleChange = (e) => {
         const num = Number(e.target.value)
         this.setState({
