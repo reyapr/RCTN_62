@@ -6,6 +6,7 @@ import Counter1 from './components/Counter1';
 import Counter2 from './components/Counter2';
 import ErrorBoundary from './components/ErrorBoundary';
 import LearnMounting from './components/LearnMounting';
+import RealtimeClock from './components/ReatimeClock';
 import User from './components/User';
 import UserFn from './components/UserFn.jsx';
 
@@ -39,6 +40,8 @@ class App extends React.Component {
     return (
       <ErrorBoundary>
         <div className="App">
+          <RealtimeClock/>
+          <hr />
           <LearnMounting/>
           <User/>
           <hr />

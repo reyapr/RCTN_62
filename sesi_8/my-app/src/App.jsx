@@ -4,6 +4,7 @@ import User from './components/User';
 import Pokemon from './components/Pokemon'
 import { Title, Button } from './components/StyledComponents'
 import { useState } from 'react';
+import Counter from './components/Counter';
 
 const anchorStyles = {
   color: 'aliceblue',
@@ -24,6 +25,7 @@ function App() {
       </div>
       <hr />
       <Title fontSize={'40px'} show={showTitle}>Counter</Title>
+      <Counter/>
       <Button onClick={() => {
         setShowTitle(!showTitle)
       }}>{ showTitle ? 'Hide' : 'Show' }</Button>
