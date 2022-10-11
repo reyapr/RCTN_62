@@ -23,15 +23,15 @@ const Home = () => {
       <b>Testing Example</b>
       <hr />
       <>
-        <h1>{number}</h1>
-        <button onClick={increment}>+</button>
-        <button onClick={decrement}>-</button>
+        <h1 data-testid='counter'>{number}</h1>
+        <button data-testid='plus-button' onClick={increment}>+</button>
+        <button data-testid='minus-button' onClick={decrement}>-</button>
       </>
       <>
         <hr />
         <h1>Why do we need Test?</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aperiam minus nobis velit eveniet reprehenderit, veniam fuga, tempore ratione cum iure provident. Cumque voluptatibus obcaecati reprehenderit nisi similique necessitatibus incidunt!</p>
-        <button onClick={() => navigate('/users')}>Go To User List</button>
+        <button role='go-to-user' onClick={() => navigate('/users')}>Go To User List</button>
       </>
     </div>
   )
