@@ -1,21 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import MyInput from './components/MyInput';
+import Users from './components/Users';
+import UsersFlatList from './components/UsersFlatList';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.input}>
-        <MyInput/>
+      <View style={{height: 400}}>
+        <View style={styles.input}>
+          <MyInput/>
+        </View>
+        
+        <View style={styles.box}>
+          <View style={[styles.box1, styles.defaultBox]}/>
+          <View style={[styles.box2, styles.defaultBox]}>
+            <Text>Test</Text>
+          </View>
+          <View style={[styles.box3, styles.defaultBox]}/>
+        </View>
       </View>
       
-      <View style={styles.box}>
-        <View style={[styles.box1, styles.defaultBox]}/>
-        <View style={[styles.box2, styles.defaultBox]}>
-          <Text>Test</Text>
+      {/* <View>
+        <Text 
+          style={{ 
+            fontSize: 30, 
+            fontWeight: '700',
+            alignSelf: 'center'
+          }}
+        >
+            Flat List
+        </Text>
+        <UsersFlatList/>
+      </View> */}
+      
+      <ScrollView>
+        <View>
+          <Users/>
         </View>
-        <View style={[styles.box3, styles.defaultBox]}/>
-      </View>
+      </ScrollView>
     </View>
   );
 }
